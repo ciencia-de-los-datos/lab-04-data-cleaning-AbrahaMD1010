@@ -13,10 +13,9 @@ import re
 
 def clean_data():
 
-    df_original = pd.read_csv("solicitudes_credito.csv", sep=";")
+    df_original = pd.read_csv("solicitudes_credito.csv", sep=";", index_col=0)
     df = df_original.copy()
 
-    df = df.drop(columns=["Unnamed: 0"])
     df = df.dropna()
 
     #sexo
