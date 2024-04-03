@@ -50,7 +50,7 @@ def clean_data():
     df["monto_del_credito"] = df["monto_del_credito"].str.strip("$").str.replace(r"\.00", "", regex=True).str.replace(",","").astype(int)
 
     #linea de credito
-    df["línea_credito"] = df["línea_credito"].str.strip().str.lower()
+    df["línea_credito"] = df["línea_credito"].str.strip().str.lower().str.replace(". ", ".")
 
 
     df = df.drop_duplicates()
